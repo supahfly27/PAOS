@@ -1,1 +1,11 @@
-<Solution />
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Folder Name="/Solution Items/docs/">
+    <File Path="phase1 - memory.md" />
+  </Folder>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="PAOS.Console/PAOS.Console.csproj" Id="bf9640c8-24c8-489d-9fdf-d93ed30e0f5e" />
+  <Project Path="PAOS.Models/PAOS.Models.csproj" Id="04f70c00-fc95-4c4f-9011-97256d85fc89" />
+</Solution>

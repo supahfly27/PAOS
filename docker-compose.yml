@@ -1,0 +1,6 @@
+services:
+  paos.console:
+    image: ${DOCKER_REGISTRY-}paosconsole
+    build:
+      context: .
+      dockerfile: PAOS.Console/Dockerfile
