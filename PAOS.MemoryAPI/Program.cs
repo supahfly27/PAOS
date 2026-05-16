@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using PAOS.Data;
 using PAOS.MemoryAPI.Endpoints;
+using Scalar.AspNetCore;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,17 @@ builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("Postgres")!)
     .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
+builder.Services.AddOpenApi();
+
 var app = builder.Build();
+
+app.MapOpenApi();                   // /openapi/v1.json
+app.MapScalarApiReference();        // /scalar/v1
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/openapi/v1.json", "PAOS Memory API v1");
+    c.RoutePrefix = "swagger";      // /swagger
+});
 
 app.MapHealthChecks("/health");
 app.MapHealthEndpoints();
