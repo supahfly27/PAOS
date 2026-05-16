@@ -1,5 +1,13 @@
 # PAOS Memory Layer — Solution Overview
 
+## Related AGENTS.md — read only if your task involves that area
+| File | Read when… |
+|------|-----------|
+| `PAOS.Data/AGENTS.md` | touching entities, migrations, or DbContext |
+| `PAOS.MemoryAPI/AGENTS.md` | adding/changing API endpoints or endpoint conventions |
+| `PAOS.MemoryWorker/AGENTS.md` | modifying the embedding pipeline or Redis queue |
+| `PAOS.Tests/AGENTS.md` | adding, fixing, or understanding integration tests |
+
 ## What This Is
 Personal Agentic OS memory subsystem. Ingests raw evidence, stores structured memories across 10 domain types, embeds them via OpenAI, and retrieves semantically via pgvector.
 

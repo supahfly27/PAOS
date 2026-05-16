@@ -1,5 +1,13 @@
 # PAOS.MemoryAPI
 
+## Related AGENTS.md — read only if your task involves that area
+| File | Read when… |
+|------|-----------|
+| `../AGENTS.md` | need system overview, Docker setup, or cross-cutting conventions |
+| `../PAOS.Data/AGENTS.md` | need entity fields, nav properties, or table names |
+| `../PAOS.MemoryWorker/AGENTS.md` | modifying embed queue format or worker behaviour |
+| `../PAOS.Tests/AGENTS.md` | adding or fixing integration tests for these endpoints |
+
 ASP.NET Core 10 Web API using minimal APIs. All endpoints registered in `Program.cs` via extension methods. Listens on port 8080 (8000 externally via Docker).
 
 ## Program.cs Services

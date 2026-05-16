@@ -1,5 +1,12 @@
 # PAOS.Tests
 
+## Related AGENTS.md — read only if your task involves that area
+| File | Read when… |
+|------|-----------|
+| `../AGENTS.md` | need system overview or dev environment setup |
+| `../PAOS.MemoryAPI/AGENTS.md` | need endpoint signatures, request shapes, or response contracts |
+| `../PAOS.Data/AGENTS.md` | need entity field names or FK relationships for cleanup order |
+
 xUnit integration test project. Tests run against live Postgres and Redis (Docker must be running).
 
 ## Infrastructure

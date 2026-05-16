@@ -1,5 +1,12 @@
 # PAOS.Data
 
+## Related AGENTS.md — read only if your task involves that area
+| File | Read when… |
+|------|-----------|
+| `../AGENTS.md` | need system overview, Docker setup, or cross-cutting conventions |
+| `../PAOS.MemoryAPI/AGENTS.md` | checking which endpoints use a given entity |
+| `../PAOS.Tests/AGENTS.md` | need FK-safe table cleanup order for a new test class |
+
 Shared class library: EF Core DbContext, all entities, all migrations. Referenced by MemoryAPI, MemoryWorker, and Tests.
 
 ## Key Files

@@ -1,5 +1,12 @@
 # PAOS.MemoryWorker
 
+## Related AGENTS.md — read only if your task involves that area
+| File | Read when… |
+|------|-----------|
+| `../AGENTS.md` | need system overview, Docker setup, or env key reference |
+| `../PAOS.Data/AGENTS.md` | need `MemoryEmbedding` fields or vector column constraints |
+| `../PAOS.MemoryAPI/AGENTS.md` | checking which endpoints push to the embed queue |
+
 .NET 10 Worker Service. Single hosted service: `EmbeddingWorker`. Runs as `memory_worker` Docker container.
 
 ## Services Registered (Program.cs)
