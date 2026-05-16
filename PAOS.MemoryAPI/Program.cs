@@ -23,6 +23,7 @@ app.MapSourceEndpoints();
 app.MapIdentityEndpoints();
 app.MapPeopleEndpoints();
 app.MapProjectEndpoints();
+app.MapCommitmentEndpoints();
 
 app.Run();
 
