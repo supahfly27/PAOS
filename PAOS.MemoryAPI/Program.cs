@@ -22,6 +22,7 @@ app.MapHealthEndpoints();
 app.MapSourceEndpoints();
 app.MapIdentityEndpoints();
 app.MapPeopleEndpoints();
+app.MapProjectEndpoints();
 
 app.Run();
 
