@@ -8,5 +8,6 @@
   </Project>
   <Project Path="PAOS.Console/PAOS.Console.csproj" Id="bf9640c8-24c8-489d-9fdf-d93ed30e0f5e" />
   <Project Path="PAOS.Data/PAOS.Data.csproj" />
+  <Project Path="PAOS.MemoryAPI/PAOS.MemoryAPI.csproj" />
   <Project Path="PAOS.Models/PAOS.Models.csproj" Id="04f70c00-fc95-4c4f-9011-97256d85fc89" />
 </Solution>

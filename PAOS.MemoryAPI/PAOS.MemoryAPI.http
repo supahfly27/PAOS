@@ -1,0 +1,6 @@
+@PAOS.MemoryAPI_HostAddress = http://localhost:5042
+
+GET {{PAOS.MemoryAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
