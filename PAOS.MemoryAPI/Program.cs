@@ -28,6 +28,7 @@ app.MapIdentityEndpoints();
 app.MapPeopleEndpoints();
 app.MapProjectEndpoints();
 app.MapCommitmentEndpoints();
+app.MapSearchEndpoints();
 app.MapEpisodicEndpoints();
 app.MapSemanticEndpoints();
 app.MapProceduralEndpoints();

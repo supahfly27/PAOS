@@ -1,6 +1,8 @@
+using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using PAOS.Data;
 using PAOS.Data.Entities.Sources;
+using StackExchange.Redis;
 
 namespace PAOS.MemoryAPI.Endpoints;
 
@@ -10,7 +12,7 @@ public static class SourceEndpoints
     {
         var group = app.MapGroup("/sources");
 
-        group.MapPost("/", async (IngestSourceRequest req, MemoryDbContext db) =>
+        group.MapPost("/", async (IngestSourceRequest req, MemoryDbContext db, IConnectionMultiplexer redis) =>
         {
             var source = new Source
             {
@@ -31,6 +33,9 @@ public static class SourceEndpoints
             db.Sources.Add(source);
             db.AuditLogs.Add(audit);
             await db.SaveChangesAsync();
+
+            var job = JsonSerializer.Serialize(new { entityType = "Source", entityId = source.Id.ToString(), text = source.RawContent });
+            await redis.GetDatabase().ListRightPushAsync("embed_queue", job);
 
             return Results.Created($"/sources/{source.Id}", source);
         });

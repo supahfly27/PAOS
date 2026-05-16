@@ -12,6 +12,7 @@
     <PackageReference Include="AWSSDK.S3" Version="3.*" />
     <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.*" />
     <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="9.*" />
+    <PackageReference Include="OpenAI" Version="2.*" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PAOS.Data\PAOS.Data.csproj" />
