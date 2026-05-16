@@ -212,3 +212,6 @@ storybook-static/
 
 # Vite
 vite.config.ts.timestamp-*
+
+# Allow E2E test project folder
+!PAOS.Tests.E2E/

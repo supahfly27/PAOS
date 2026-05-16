@@ -9,5 +9,6 @@
   <Project Path="PAOS.Data/PAOS.Data.csproj" />
   <Project Path="PAOS.MemoryAPI/PAOS.MemoryAPI.csproj" />
   <Project Path="PAOS.MemoryWorker/PAOS.MemoryWorker.csproj" />
+  <Project Path="PAOS.Tests.E2E/PAOS.Tests.E2E.csproj" />
   <Project Path="PAOS.Tests/PAOS.Tests.csproj" />
 </Solution>
