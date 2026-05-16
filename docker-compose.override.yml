@@ -1,0 +1,4 @@
+services:
+  memory_api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
