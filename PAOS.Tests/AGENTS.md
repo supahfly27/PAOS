@@ -6,8 +6,9 @@
 | `../AGENTS.md` | need system overview or dev environment setup |
 | `../PAOS.MemoryAPI/AGENTS.md` | need endpoint signatures, request shapes, or response contracts |
 | `../PAOS.Data/AGENTS.md` | need entity field names or FK relationships for cleanup order |
+| `../PAOS.Tests.E2E/AGENTS.md` | need the full-stack E2E tests that verify real Docker infra |
 
-xUnit integration test project. Tests run against live Postgres and Redis (Docker must be running).
+xUnit **in-process** integration test project. Uses `WebApplicationFactory` — the API runs inside the test process, no Docker API container needed. Postgres and Redis Docker containers must be running.
 
 ## Infrastructure
 

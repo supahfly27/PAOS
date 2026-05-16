@@ -6,7 +6,8 @@
 | `PAOS.Data/AGENTS.md` | touching entities, migrations, or DbContext |
 | `PAOS.MemoryAPI/AGENTS.md` | adding/changing API endpoints or endpoint conventions |
 | `PAOS.MemoryWorker/AGENTS.md` | modifying the embedding pipeline or Redis queue |
-| `PAOS.Tests/AGENTS.md` | adding, fixing, or understanding integration tests |
+| `PAOS.Tests/AGENTS.md` | adding, fixing, or understanding in-process integration tests |
+| `PAOS.Tests.E2E/AGENTS.md` | adding, fixing, or understanding full-stack E2E tests |
 
 ## What This Is
 Personal Agentic OS memory subsystem. Ingests raw evidence, stores structured memories across 10 domain types, embeds them via OpenAI, and retrieves semantically via pgvector.
@@ -18,7 +19,8 @@ Personal Agentic OS memory subsystem. Ingests raw evidence, stores structured me
 | `PAOS.Data` | Class library | EF Core entities, DbContext, all migrations |
 | `PAOS.MemoryAPI` | ASP.NET Core Web API | REST endpoints, runs on port 8000 (Docker) / 8080 (local) |
 | `PAOS.MemoryWorker` | .NET Worker Service | Background embedding pipeline |
-| `PAOS.Tests` | xUnit | Integration tests against live Postgres + Redis |
+| `PAOS.Tests` | xUnit | In-process integration tests via WebApplicationFactory against live Postgres + Redis |
+| `PAOS.Tests.E2E` | xUnit | Full-stack E2E tests hitting real Docker API + verifying Postgres, Redis, MinIO |
 | `PAOS.Models` | Class library | Stub — unused, do not add DTOs here (use inline records in endpoints) |
 | `PAOS.Console` | Console app | Stub — not part of memory layer |
 
@@ -43,7 +45,7 @@ Minio__Endpoint=minio:9000
 Minio__AccessKey=minio
 Minio__SecretKey=minio_password
 ```
-Local dev defaults: Postgres on `localhost:5432`, Redis on `localhost:6379` (hardcoded in `ApiFactory` and `MemoryDbContextFactory`).
+Local dev defaults: Postgres on `localhost:5432`, Redis on `localhost:6379` (hardcoded in `ApiFactory`, `MemoryDbContextFactory`, and `E2EFixture`). MinIO at `localhost:9000` (hardcoded in `E2EFixture`).
 
 ## Tech Stack
 - .NET 10 / C# 13
@@ -62,7 +64,8 @@ Local dev defaults: Postgres on `localhost:5432`, Redis on `localhost:6379` (har
 docker compose up --build          # start all 5 services
 dotnet ef migrations add <Name> --project PAOS.Data --startup-project PAOS.Data
 dotnet ef database update          --project PAOS.Data --startup-project PAOS.Data
-dotnet test PAOS.Tests/PAOS.Tests.csproj   # requires Docker Postgres + Redis running
+dotnet test PAOS.Tests/PAOS.Tests.csproj       # requires Docker Postgres + Redis running
+dotnet test PAOS.Tests.E2E/PAOS.Tests.E2E.csproj  # requires all 5 Docker services running
 ```
 
 ## Conventions
