@@ -1,9 +1,13 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using PAOS.Data;
 using PAOS.MemoryAPI.Endpoints;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.ConfigureHttpJsonOptions(options =>
+    options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddDbContext<MemoryDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
