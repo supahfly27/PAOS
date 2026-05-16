@@ -28,6 +28,10 @@ app.MapIdentityEndpoints();
 app.MapPeopleEndpoints();
 app.MapProjectEndpoints();
 app.MapCommitmentEndpoints();
+app.MapEpisodicEndpoints();
+app.MapSemanticEndpoints();
+app.MapProceduralEndpoints();
+app.MapDecisionEndpoints();
 
 app.Run();
 
