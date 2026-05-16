@@ -22,3 +22,5 @@ app.MapHealthEndpoints();
 app.MapSourceEndpoints();
 
 app.Run();
+
+public partial class Program { }
